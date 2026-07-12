@@ -1,0 +1,59 @@
+Create a premium single-page Electronic Press Kit website for the Rome-based DJ and producer “T0N1N0”.
+
+TECH / OUTPUT
+- Build with Next.js App Router, React, Tailwind CSS and Framer Motion.
+- Keep the final page fast, responsive, accessible and deployable on Vercel.
+- Use no color: only near-black, off-white, grey and opacity.
+- Do not use generic gradients, neon colors, glass cards or stock nightclub clichés.
+- Use a strong editorial grid, oversized typography, thin rules and restrained motion.
+
+VISUAL IDENTITY
+- Central motif: binary 0 and 1.
+- Primary wordmark: T0N1N0.
+- Tagline: “THERE IS NO MIDDLE STATE.”
+- Mood: underground, intelligent, physical, high-fashion, technical, minimal.
+- Inspiration should be interpreted, not copied: the sparse artist-led navigation of Seth Troxler, project/editorial structure around Richie Hawtin, and direct professional contact hierarchy common to top-tier DJ websites.
+- Add subtle binary rain, scan line, rotating orbital 0/1 mark, scroll reveals, hover inversion and typography glitches.
+- Respect prefers-reduced-motion.
+
+PAGE STRUCTURE
+1. Fixed header with wordmark, status indicator and anchor navigation.
+2. Full-screen hero: huge T0N1N0 title, “DJ / PRODUCER / ROME”, genres and animated binary orbit.
+3. Moving black/white ticker.
+4. About section with a bold manifesto and concise international bio.
+5. Music section with three large editorial cards:
+   - “Des1gner” — Autektone Dark — Beatport link
+   - “Tech House / Bass House Club Set 2026” — SoundCloud link
+   - “Des1gner Visual” — YouTube link
+6. Selected work timeline:
+   - Autektone Dark release
+   - ModaLisboa sound work
+   - Rashomon / Zalib appearances
+   - Beatport Peak-Time Top 6 highlight (mark this copy as needing final confirmation)
+7. Live profile with performance statement and technical summary.
+8. Press assets section with wordmark, binary mark and print/save-as-PDF action.
+9. Large booking CTA and links.
+10. Minimal footer.
+
+ARTIST COPY
+T0N1N0 is a Rome-based DJ and producer whose sound moves between groove-led tech house, bass-weighted club energy and precise peak-time techno. His approach is built on contrast: clean structures and physical impact, control and release, zero and one.
+
+DETAILS
+- Base: Rome, Italy
+- DJ direction: Tech House / Bass House / House
+- Production: Peak-Time Techno / approximately 130 BPM
+- Education: IED Roma — Sound Design
+- Label reference: Autektone Dark
+- Booking email: t0n1n0.booking@gmail.com
+- Instagram: https://www.instagram.com/_t0n1n0_/
+- Beatport: https://www.beatport.com/artist/t0n1n0/2279123
+- SoundCloud set: https://soundcloud.com/the-game-company/t0n1n0-tech-house-bass-house
+- YouTube visual: https://www.youtube.com/watch?v=PgxxheDzCQ4
+
+COMPONENT NOTES
+- Build reusable components for SectionHeader, ReleaseCard, CreditRow, AssetCard and BinaryCanvas.
+- Use semantic HTML and visible keyboard focus.
+- Do not autoplay audio or video.
+- Make the booking email immediately visible.
+- Include metadata/Open Graph fields.
+- Add a print stylesheet or printable route for saving the EPK as PDF.

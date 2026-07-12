@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="T0N1N0 — DJ / Producer. Official electronic press kit, music, biography, selected work and booking contact." />
+  <meta name="robots" content="index, follow" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#050505" />
+  <meta property="og:title" content="T0N1N0 — Electronic Press Kit" />
+  <meta property="og:description" content="There is no middle state. DJ / Producer — Rome." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/t0n1n0-og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="T0N1N0 Electronic Press Kit — monochrome binary artwork" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="T0N1N0 — Electronic Press Kit" />
+  <meta name="twitter:description" content="There is no middle state. DJ / Producer — Rome." />
+  <meta name="twitter:image" content="/assets/t0n1n0-og.png" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <script>document.documentElement.classList.replace('no-js','js');</script>
+  <title>T0N1N0 — Electronic Press Kit</title>
+  <style>
+    :root {
+      --bg: #050505;
+      --paper: #f2f2ee;
+      --ink: #f6f6f2;
+      --muted: #a1a19a;
+      --line: rgba(255,255,255,.18);
+      --line-strong: rgba(255,255,255,.5);
+      --black: #050505;
+      --white: #f6f6f2;
+      --pad: clamp(20px, 4vw, 64px);
+      --radius: 0px;
+      --ease: cubic-bezier(.2,.8,.2,1);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 72% 18%, rgba(255,255,255,.055), transparent 26%),
+        linear-gradient(180deg, #080808 0%, #030303 42%, #090909 100%);
+      font-family: Arial, Helvetica, sans-serif;
+      overflow-x: hidden;
+      cursor: crosshair;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--white); outline-offset: 4px; }
+    .skip-link { position: fixed; top: 10px; left: 10px; z-index: 100; transform: translateY(-160%); padding: 12px 16px; background: var(--white); color: var(--black); font: 700 12px/1 "Courier New", monospace; transition: transform .2s; }
+    .skip-link:focus { transform: none; }
+    ::selection { background: var(--white); color: var(--black); }
+
+    .noise {
+      position: fixed; inset: 0; z-index: 90; pointer-events: none; opacity: .075;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.75'/%3E%3C/svg%3E");
+      mix-blend-mode: soft-light;
+    }
+
+    #binaryCanvas { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; opacity: .18; pointer-events: none; }
+
+    .scanline {
+      position: fixed; left: 0; right: 0; top: -12vh; height: 12vh; z-index: 2; pointer-events: none;
+      background: linear-gradient(to bottom, transparent, rgba(255,255,255,.06), transparent);
+      animation: scan 9s linear infinite;
+    }
+    @keyframes scan { to { transform: translateY(124vh); } }
+
+    .site { position: relative; z-index: 3; }
+    .shell { width: min(1680px, 100%); margin: 0 auto; padding-inline: var(--pad); }
+
+    .topbar {
+      position: fixed; z-index: 50; top: 0; left: 0; right: 0;
+      display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
+      min-height: 70px; padding: 0 var(--pad);
+      border-bottom: 1px solid var(--line);
+      background: rgba(5,5,5,.72); -webkit-backdrop-filter: blur(16px) saturate(120%); backdrop-filter: blur(16px) saturate(120%);
+    }
+    .wordmark { font-family: "Courier New", monospace; font-weight: 700; letter-spacing: .15em; font-size: 14px; }
+    .status { display: inline-flex; align-items: center; gap: 9px; color: var(--muted); font: 11px/1 "Courier New", monospace; text-transform: uppercase; letter-spacing: .15em; }
+    .status-dot { width: 6px; height: 6px; background: var(--white); border-radius: 50%; box-shadow: 0 0 0 5px rgba(255,255,255,.08); animation: pulse 2s infinite; }
+    @keyframes pulse { 50% { opacity: .4; transform: scale(.8); } }
+    .menu { justify-self: end; display: flex; gap: clamp(12px, 2vw, 28px); font: 11px/1 "Courier New", monospace; text-transform: uppercase; letter-spacing: .1em; }
+    .menu a { color: var(--muted); transition: color .25s; }
+    .menu a:hover { color: var(--white); }
+
+    .hero { min-height: 100vh; min-height: 100svh; padding-top: 110px; display: grid; align-items: end; position: relative; overflow: hidden; border-bottom: 1px solid var(--line); }
+    .hero-grid { display: grid; grid-template-columns: 1.2fr .8fr; min-height: calc(100svh - 110px); }
+    .hero-copy { align-self: end; padding-bottom: clamp(34px, 6vh, 72px); }
+    .eyebrow { font: 11px/1.4 "Courier New", monospace; text-transform: uppercase; letter-spacing: .22em; color: var(--muted); margin-bottom: 22px; }
+    .hero-title {
+      margin: 0; font: 700 clamp(74px, 15.5vw, 268px)/.72 Arial, Helvetica, sans-serif;
+      letter-spacing: -.085em; text-transform: uppercase; white-space: nowrap;
+      transform: translateX(-.025em);
+    }
+    .hero-title .zero { font-family: "Courier New", monospace; font-weight: 400; }
+    .hero-meta { margin-top: clamp(34px, 5vh, 70px); display: grid; grid-template-columns: 1fr 1fr; gap: 22px; max-width: 760px; }
+    .hero-meta p { margin: 0; font-size: clamp(15px, 1.45vw, 22px); line-height: 1.35; max-width: 28ch; }
+    .hero-meta .mono { color: var(--muted); font: 12px/1.7 "Courier New", monospace; text-transform: uppercase; letter-spacing: .08em; }
+
+    .hero-orbit { position: relative; min-height: 520px; display: grid; place-items: center; border-left: 1px solid var(--line); }
+    .orbital { width: min(38vw, 520px); aspect-ratio: 1; border: 1px solid var(--line-strong); border-radius: 50%; position: relative; animation: rotate 24s linear infinite; }
+    .orbital::before, .orbital::after { content: ""; position: absolute; inset: 12%; border: 1px solid var(--line); border-radius: 50%; transform: rotate(55deg) scaleX(.5); }
+    .orbital::after { transform: rotate(-35deg) scaleY(.38); }
+    .orbital-center { position: absolute; inset: 43%; display: grid; place-items: center; background: var(--white); color: var(--black); font: 700 16px/1 "Courier New", monospace; }
+    .orbit-bit { position: absolute; top: 50%; left: 50%; font: 12px/1 "Courier New", monospace; background: var(--bg); padding: 4px; }
+    .orbit-bit.a { transform: translate(-50%,-50%) translateY(-50%); top: 0; }
+    .orbit-bit.b { transform: translate(-50%,-50%); left: 100%; }
+    .orbit-bit.c { transform: translate(-50%,-50%); top: 100%; }
+    .orbit-bit.d { transform: translate(-50%,-50%); left: 0; }
+    @keyframes rotate { to { transform: rotate(360deg); } }
+    .orbit-label { position: absolute; bottom: 32px; right: 0; writing-mode: vertical-rl; color: var(--muted); font: 10px/1 "Courier New", monospace; letter-spacing: .2em; text-transform: uppercase; }
+
+    .ticker { overflow: hidden; border-bottom: 1px solid var(--line); background: var(--white); color: var(--black); }
+    .ticker-track { display: flex; width: max-content; animation: marquee 24s linear infinite; }
+    .ticker span { padding: 12px 28px; font: 700 12px/1 "Courier New", monospace; text-transform: uppercase; letter-spacing: .12em; white-space: nowrap; }
+    @keyframes marquee { to { transform: translateX(-50%); } }
+
+    section { position: relative; border-bottom: 1px solid var(--line); }
+    .section-head { padding: 22px 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 90px 1fr auto; gap: 16px; align-items: baseline; }
+    .section-index { color: var(--muted); font: 11px/1 "Courier New", monospace; }
+    .section-title { margin: 0; font-size: clamp(26px, 4vw, 64px); letter-spacing: -.04em; text-transform: uppercase; }
+    .section-tag { color: var(--muted); font: 10px/1 "Courier New", monospace; text-transform: uppercase; letter-spacing: .18em; }
+
+    .about-grid { display: grid; grid-template-columns: .85fr 1.15fr; }
+    .about-left { min-height: 620px; padding: clamp(40px, 8vw, 120px) var(--pad) clamp(40px, 8vw, 120px) 0; border-right: 1px solid var(--line); display: flex; flex-direction: column; justify-content: space-between; }
+    .statement { margin: 0; font-size: clamp(38px, 6.2vw, 100px); line-height: .94; letter-spacing: -.06em; max-width: 10ch; text-transform: uppercase; }
+    .binary-seal { width: 160px; aspect-ratio: 1; display: grid; place-items: center; border: 1px solid var(--line-strong); font: 700 34px/1 "Courier New", monospace; position: relative; }
+    .binary-seal::after { content: "ROME / IT / 001"; position: absolute; bottom: -26px; font: 9px/1 "Courier New", monospace; color: var(--muted); letter-spacing: .18em; white-space: nowrap; }
+    .about-right { padding: clamp(40px, 8vw, 120px) 0 clamp(40px, 8vw, 120px) var(--pad); }
+    .bio { font-size: clamp(20px, 2.35vw, 38px); line-height: 1.22; letter-spacing: -.02em; max-width: 28ch; margin: 0; }
+    .bio strong { color: var(--white); }
+    .facts { margin-top: 72px; display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid var(--line); }
+    .fact { padding: 22px 20px 22px 0; border-bottom: 1px solid var(--line); min-height: 100px; }
+    .fact:nth-child(odd) { border-right: 1px solid var(--line); }
+    .fact:nth-child(even) { padding-left: 20px; }
+    .fact-k { display: block; color: var(--muted); font: 9px/1 "Courier New", monospace; text-transform: uppercase; letter-spacing: .18em; margin-bottom: 16px; }
+    .fact-v { display: block; font-size: 16px; line-height: 1.35; }
+
+    .music-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .release { min-height: 510px; padding: 28px; border-right: 1px solid var(--line); display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; transition: background .45s var(--ease), color .45s var(--ease); }
+    .release:last-child { border-right: 0; }
+    .release::before { content: attr(data-code); position: absolute; right: -12px; top: 32px; font: 700 110px/.8 "Courier New", monospace; color: rgba(255,255,255,.035); transition: color .45s; }
+    .release:hover { background: var(--white); color: var(--black); }
+    .release:hover::before { color: rgba(0,0,0,.08); }
+    .release-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; }
+    .release-no { font: 11px/1 "Courier New", monospace; color: var(--muted); }
+    .release-type { font: 9px/1 "Courier New", monospace; text-transform: uppercase; letter-spacing: .15em; border: 1px solid currentColor; padding: 8px 10px; }
+    .release h3 { margin: 0 0 12px; font-size: clamp(32px, 4vw, 68px); line-height: .9; letter-spacing: -.06em; text-transform: uppercase; }
+    .release p { margin: 0; max-width: 28ch; font-size: 14px; line-height: 1.55; color: var(--muted); }
+    .release:hover p, .release:hover .release-no { color: #3e3e3b; }
+    .arrow-link { margin-top: 28px; display: inline-flex; align-items: center; gap: 16px; font: 11px/1 "Courier New", monospace; text-transform: uppercase; letter-spacing: .12em; }
+    .arrow-link::after { content: "↗"; font-size: 18px; transition: transform .3s; }
+    .arrow-link:hover::after { transform: translate(4px,-4px); }
+
+    .wave { height: 80px; display: flex; align-items: center; gap: 3px; margin-bottom: 34px; opacity: .8; }
+    .wave i { display: block; width: 3px; height: calc(10px + var(--h) * 1px); max-height: 72px; background: currentColor; animation: wave 1.7s ease-in-out infinite alternate; animation-delay: calc(var(--i) * -60ms); transform-origin: center; }
+    @keyframes wave { to { transform: scaleY(.28); opacity: .45; } }
+
+    .credits { display: grid; grid-template-columns: 1fr 1fr; }
+    .credits-intro { padding: clamp(40px, 7vw, 100px) var(--pad) clamp(40px, 7vw, 100px) 0; border-right: 1px solid var(--line); }
+    .credits-intro p { margin: 0; font-size: clamp(25px, 3.8vw, 58px); line-height: 1.02; letter-spacing: -.045em; max-width: 13ch; text-transform: uppercase; }
+    .credits-list { list-style: none; margin: 0; padding: 0; }
+    .credits-list li { min-height: 130px; padding: 24px 0 24px var(--pad); border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 90px 1fr auto; gap: 16px; align-items: center; }
+    .credits-list li:last-child { border-bottom: 0; }
+    .credit-year { font: 11px/1 "Courier New", monospace; color: var(--muted); }
+    .credit-name { font-size: clamp(23px, 2.5vw, 40px); letter-spacing: -.035em; text-transform: uppercase; }
+    .credit-detail { color: var(--muted); font: 10px/1.4 "Courier New", monospace; text-align: right; text-transform: uppercase; letter-spacing: .1em; }
+
+    .live-panel { min-height: 70vh; display: grid; grid-template-columns: 1fr 1fr; }
+    .live-poster { min-height: 680px; border-right: 1px solid var(--line); position: relative; overflow: hidden; display: grid; place-items: center; background: var(--white); color: var(--black); }
+    .poster-type { position: relative; z-index: 2; transform: rotate(-6deg); }
+    .poster-type h3 { margin: 0; font-size: clamp(90px, 14vw, 230px); line-height: .66; letter-spacing: -.12em; text-transform: uppercase; }
+    .poster-type .p1 { margin-left: -.15em; }
+    .poster-type .p2 { margin-left: .12em; }
+    .poster-grid { position: absolute; inset: 0; opacity: .25; background-image: linear-gradient(rgba(0,0,0,.35) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,.35) 1px, transparent 1px); background-size: 34px 34px; transform: perspective(600px) rotateX(56deg) scale(1.45); transform-origin: center bottom; }
+    .live-copy { padding: clamp(44px, 7vw, 100px); display: flex; flex-direction: column; justify-content: space-between; }
+    .live-copy h3 { margin: 0; font-size: clamp(42px, 6vw, 96px); line-height: .9; letter-spacing: -.06em; text-transform: uppercase; max-width: 7ch; }
+    .live-copy p { color: var(--muted); font-size: clamp(16px, 1.6vw, 24px); line-height: 1.45; max-width: 34ch; }
+    .specs { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); margin-top: 56px; }
+    .spec { padding: 18px 12px 18px 0; border-bottom: 1px solid var(--line); }
+    .spec:nth-child(even) { border-left: 1px solid var(--line); padding-left: 18px; }
+    .spec small { display: block; font: 9px/1 "Courier New", monospace; text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 12px; }
+    .spec span { font-size: 15px; }
+
+    .assets-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .asset { min-height: 300px; padding: 28px; border-right: 1px solid var(--line); display: flex; flex-direction: column; justify-content: space-between; transition: .35s var(--ease); }
+    .asset:last-child { border-right: 0; }
+    .asset:hover { background: rgba(255,255,255,.06); }
+    .asset-icon { width: 76px; aspect-ratio: 1; display: grid; place-items: center; border: 1px solid var(--line-strong); font: 700 21px/1 "Courier New", monospace; }
+    .asset h3 { margin: 0 0 8px; font-size: 28px; text-transform: uppercase; letter-spacing: -.04em; }
+    .asset p { color: var(--muted); margin: 0; font-size: 13px; line-height: 1.5; }
+
+    .contact { min-height: 86vh; display: grid; place-items: center; text-align: center; padding: 100px var(--pad); overflow: hidden; }
+    .contact::before { content: "010101 001 0101 10 0010101 01010"; position: absolute; top: 10%; left: -5%; font: 700 clamp(45px, 8vw, 130px)/.8 "Courier New", monospace; color: rgba(255,255,255,.028); white-space: nowrap; transform: rotate(-5deg); }
+    .contact-label { color: var(--muted); font: 11px/1 "Courier New", monospace; text-transform: uppercase; letter-spacing: .2em; margin-bottom: 32px; }
+    .contact h2 { margin: 0; font-size: clamp(58px, 11vw, 190px); line-height: .78; letter-spacing: -.09em; text-transform: uppercase; }
+    .contact h2 span { font-family: "Courier New", monospace; font-weight: 400; }
+    .contact-mail { display: inline-block; margin-top: 56px; padding: 18px 24px; border: 1px solid var(--line-strong); font: 12px/1 "Courier New", monospace; letter-spacing: .08em; transition: .25s; }
+    .contact-mail:hover { background: var(--white); color: var(--black); }
+    .contact-links { margin-top: 34px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 24px; color: var(--muted); font: 10px/1 "Courier New", monospace; text-transform: uppercase; letter-spacing: .13em; }
+    .contact-links a:hover { color: var(--white); }
+
+    footer { padding: 22px var(--pad); display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: center; color: var(--muted); font: 9px/1.5 "Courier New", monospace; text-transform: uppercase; letter-spacing: .1em; }
+    footer .center { text-align: center; }
+    footer .right { text-align: right; }
+
+    .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+    .js .reveal.in { opacity: 1; transform: none; }
+
+    .glitch { position: relative; }
+    .glitch:hover::before, .glitch:hover::after { content: attr(data-text); position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+    .glitch:hover::before { transform: translate(3px,-1px); clip-path: inset(0 0 55% 0); opacity: .55; }
+    .glitch:hover::after { transform: translate(-3px,2px); clip-path: inset(48% 0 0 0); opacity: .35; }
+
+    .mobile-toggle { display: none; justify-self: end; min-width: 44px; min-height: 44px; background: none; border: 1px solid var(--line); color: var(--white); padding: 9px 12px; font: 10px/1 "Courier New", monospace; text-transform: uppercase; }
+
+    @media (max-width: 960px) {
+      .topbar { grid-template-columns: 1fr auto; }
+      .topbar .status { display: none; }
+      .menu { display: none; position: fixed; top: 70px; left: 0; right: 0; background: rgba(5,5,5,.97); padding: 30px var(--pad); border-bottom: 1px solid var(--line); flex-direction: column; align-items: flex-end; }
+      .menu.open { display: flex; }
+      .menu a { display: flex; align-items: center; justify-content: flex-end; width: 100%; min-height: 44px; }
+      .mobile-toggle { display: block; }
+      .no-js .menu { display: flex; position: static; grid-column: 1 / -1; flex-direction: row; flex-wrap: wrap; justify-content: flex-end; padding: 14px 0; border: 0; background: transparent; }
+      .no-js .mobile-toggle { display: none; }
+      .no-js .topbar { position: absolute; }
+      .hero-grid, .about-grid, .credits, .live-panel { grid-template-columns: 1fr; }
+      .hero-title { font-size: clamp(68px, 20vw, 160px); }
+      .hero-orbit { border-left: 0; border-top: 1px solid var(--line); min-height: 420px; }
+      .orbital { width: min(72vw, 440px); }
+      .about-left { min-height: 480px; border-right: 0; border-bottom: 1px solid var(--line); padding-right: 0; }
+      .about-right { padding-left: 0; }
+      .music-grid, .assets-grid { grid-template-columns: 1fr; }
+      .release, .asset { border-right: 0; border-bottom: 1px solid var(--line); }
+      .release:last-child, .asset:last-child { border-bottom: 0; }
+      .credits-intro { border-right: 0; border-bottom: 1px solid var(--line); padding-right: 0; }
+      .credits-list li { padding-left: 0; }
+      .live-poster { border-right: 0; border-bottom: 1px solid var(--line); min-height: 560px; }
+      .live-copy { padding-inline: 0; }
+    }
+
+    @media (max-width: 640px) {
+      .hero-meta { grid-template-columns: 1fr; }
+      .section-head { grid-template-columns: 42px 1fr; }
+      .section-tag { display: none; }
+      .facts { grid-template-columns: 1fr; }
+      .fact:nth-child(odd) { border-right: 0; }
+      .fact:nth-child(even) { padding-left: 0; }
+      .credits-list li { grid-template-columns: 56px 1fr; }
+      .credit-detail { grid-column: 2; text-align: left; }
+      .specs { grid-template-columns: 1fr; }
+      .spec:nth-child(even) { border-left: 0; padding-left: 0; }
+      footer { grid-template-columns: 1fr; text-align: left; }
+      footer .center, footer .right { text-align: left; }
+      .release { min-height: 440px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+      .js .reveal { opacity: 1; transform: none; }
+    }
+
+    @media print {
+      .js .reveal { opacity: 1 !important; transform: none !important; }
+      .topbar, #binaryCanvas, .noise, .scanline, .ticker, .mobile-toggle { display: none !important; }
+      body { background: #fff; color: #000; }
+      .site { color: #000; }
+      section, .hero, .section-head, .about-left, .release, .credits-intro, .credits-list li, .live-poster, .asset { border-color: #bbb !important; }
+      .hero { min-height: auto; padding-top: 30px; }
+      .hero-grid, .about-grid, .credits, .live-panel { display: block; }
+      .hero-orbit { display: none; }
+      .hero-title { font-size: 100px; }
+      .about-left, .about-right, .credits-intro, .live-copy { padding: 30px 0; }
+      .music-grid, .assets-grid { display: block; }
+      .release, .asset { min-height: auto; padding: 24px 0; }
+      .live-poster { display: none; }
+      .contact { min-height: auto; padding: 60px 0; }
+      .contact h2 { font-size: 90px; }
+      a { color: #000; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <canvas id="binaryCanvas" aria-hidden="true"></canvas>
+  <div class="scanline" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+
+  <div class="site">
+    <header class="topbar">
+      <a class="wordmark" href="#top" aria-label="T0N1N0 home">T0N1N0</a>
+      <div class="status"><span class="status-dot"></span> Booking signal active</div>
+      <nav class="menu" id="menu" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#music">Music</a>
+        <a href="#work">Work</a>
+        <a href="#live">Live</a>
+        <a href="#assets">Assets</a>
+        <a href="#booking">Booking</a>
+      </nav>
+      <button class="mobile-toggle" id="mobileToggle" type="button" aria-controls="menu" aria-expanded="false">Menu</button>
+    </header>
+
+    <main id="main-content">
+      <div id="top" aria-hidden="true"></div>
+      <section class="hero">
+        <div class="shell hero-grid">
+          <div class="hero-copy reveal">
+            <div class="eyebrow">Electronic Press Kit / 2026 / Rome</div>
+            <h1 class="hero-title glitch" data-text="T0N1N0">T<span class="zero">0</span>N<span class="zero">1</span>N<span class="zero">0</span></h1>
+            <div class="hero-meta">
+              <p>DJ and producer shaping a direct connection between <strong>club pressure</strong>, minimal form and digital identity.</p>
+              <p class="mono">Tech House / Bass House / Techno<br>There is no middle state.</p>
+            </div>
+          </div>
+          <div class="hero-orbit" aria-hidden="true">
+            <div class="orbital">
+              <span class="orbit-bit a">0</span><span class="orbit-bit b">1</span><span class="orbit-bit c">0</span><span class="orbit-bit d">1</span>
+              <div class="orbital-center">01</div>
+            </div>
+            <div class="orbit-label">Input → tension → release → repeat</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <span>T0N1N0 / DJ / PRODUCER / ROME / NO MIDDLE STATE / 0 1 0 1 /</span>
+          <span>T0N1N0 / DJ / PRODUCER / ROME / NO MIDDLE STATE / 0 1 0 1 /</span>
+          <span>T0N1N0 / DJ / PRODUCER / ROME / NO MIDDLE STATE / 0 1 0 1 /</span>
+          <span>T0N1N0 / DJ / PRODUCER / ROME / NO MIDDLE STATE / 0 1 0 1 /</span>
+        </div>
+      </div>
+
+      <section id="about">
+        <div class="shell">
+          <div class="section-head reveal"><span class="section-index">[01]</span><h2 class="section-title">About</h2><span class="section-tag">Artist profile</span></div>
+          <div class="about-grid">
+            <div class="about-left reveal">
+              <p class="statement">There is no middle state.</p>
+              <div class="binary-seal">0/1</div>
+            </div>
+            <div class="about-right reveal">
+              <p class="bio"><strong>T0N1N0</strong> is a Rome-based DJ and producer whose sound moves between groove-led tech house, bass-weighted club energy and precise peak-time techno. His approach is built on contrast: clean structures and physical impact, control and release, zero and one.</p>
+              <div class="facts">
+                <div class="fact"><span class="fact-k">Base</span><span class="fact-v">Rome, Italy</span></div>
+                <div class="fact"><span class="fact-k">DJ direction</span><span class="fact-v">Tech House / Bass House / House</span></div>
+                <div class="fact"><span class="fact-k">Production</span><span class="fact-v">Peak-Time Techno</span></div>
+                <div class="fact"><span class="fact-k">Education</span><span class="fact-v">IED Roma — Sound Design</span></div>
+                <div class="fact"><span class="fact-k">Label</span><span class="fact-v">Autektone Dark</span></div>
+                <div class="fact"><span class="fact-k">Format</span><span class="fact-v">Club sets / extended sets / showcases</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="music">
+        <div class="shell">
+          <div class="section-head reveal"><span class="section-index">[02]</span><h2 class="section-title">Music</h2><span class="section-tag">Selected signals</span></div>
+        </div>
+        <div class="music-grid">
+          <article class="release reveal" data-code="01">
+            <div class="release-top"><span class="release-no">ATKD188</span><span class="release-type">Release</span></div>
+            <div>
+              <div class="wave" aria-hidden="true"></div>
+              <h3>Des1gner</h3>
+              <p>A stripped-down, driving techno cut released on Autektone Dark: dark, precise and engineered for peak-time pressure.</p>
+              <a class="arrow-link" href="https://www.beatport.com/artist/t0n1n0/2279123" target="_blank" rel="noopener">Listen on Beatport</a>
+            </div>
+          </article>
+          <article class="release reveal" data-code="10">
+            <div class="release-top"><span class="release-no">49:52</span><span class="release-type">DJ set</span></div>
+            <div>
+              <div class="wave" aria-hidden="true"></div>
+              <h3>Club Set 2026</h3>
+              <p>A club-focused journey through tech house and bass house, built around heavy low end, sharp transitions and peak-time momentum.</p>
+              <a class="arrow-link" href="https://soundcloud.com/the-game-company/t0n1n0-tech-house-bass-house" target="_blank" rel="noopener">Play on SoundCloud</a>
+            </div>
+          </article>
+          <article class="release reveal" data-code="11">
+            <div class="release-top"><span class="release-no">VISUAL</span><span class="release-type">Video</span></div>
+            <div>
+              <div class="wave" aria-hidden="true"></div>
+              <h3>Des1gner Visual</h3>
+              <p>The official visual extension of the track: monochrome language, hard geometry and a system moving between signal and noise.</p>
+              <a class="arrow-link" href="https://www.youtube.com/watch?v=PgxxheDzCQ4" target="_blank" rel="noopener">Watch on YouTube</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="work">
+        <div class="shell">
+          <div class="section-head reveal"><span class="section-index">[03]</span><h2 class="section-title">Selected Work</h2><span class="section-tag">Audio / club / fashion</span></div>
+          <div class="credits">
+            <div class="credits-intro reveal"><p>Sound designed for rooms, bodies and moving images.</p></div>
+            <ul class="credits-list">
+              <li class="reveal"><span class="credit-year">2026</span><span class="credit-name">Des1gner</span><span class="credit-detail">Autektone Dark<br>Official release</span></li>
+              <li class="reveal"><span class="credit-year">2026</span><span class="credit-name">Club Set</span><span class="credit-detail">Tech House / Bass House<br>49:52 mix</span></li>
+              <li class="reveal"><span class="credit-year">—</span><span class="credit-name">ModaLisboa</span><span class="credit-detail">Sound work<br>Fashion context</span></li>
+              <li class="reveal"><span class="credit-year">—</span><span class="credit-name">Rashomon / Zalib</span><span class="credit-detail">Selected DJ appearances<br>Rome</span></li>
+              <li class="reveal"><span class="credit-year">—</span><span class="credit-name">Beatport Top 6</span><span class="credit-detail">Peak-Time chart<br>Selected highlight</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="live">
+        <div class="shell">
+          <div class="section-head reveal"><span class="section-index">[04]</span><h2 class="section-title">Live</h2><span class="section-tag">Club profile</span></div>
+          <div class="live-panel">
+            <div class="live-poster reveal" aria-label="Abstract T0N1N0 club poster">
+              <div class="poster-grid"></div>
+              <div class="poster-type"><h3 class="p1">T0N</h3><h3 class="p2">1N0</h3></div>
+            </div>
+            <div class="live-copy reveal">
+              <div>
+                <div class="eyebrow">Performance statement / 001</div>
+                <h3>Built for the room.</h3>
+                <p>T0N1N0 reads the floor and adjusts pressure in real time: groove first, tension second, impact at the right moment. Sets can move from rolling house rhythms into harder, darker territory without losing continuity.</p>
+              </div>
+              <div class="specs">
+                <div class="spec"><small>Formats</small><span>Opening / peak-time / extended</span></div>
+                <div class="spec"><small>Preferred setup</small><span>Club-standard CDJs + mixer</span></div>
+                <div class="spec"><small>Home base</small><span>Rome</span></div>
+                <div class="spec"><small>Travel</small><span>Italy / selected EU dates</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="assets">
+        <div class="shell">
+          <div class="section-head reveal"><span class="section-index">[05]</span><h2 class="section-title">Press Assets</h2><span class="section-tag">Download / print</span></div>
+          <div class="assets-grid">
+            <a class="asset reveal" href="assets/t0n1n0-wordmark.svg" download>
+              <div class="asset-icon">SVG</div>
+              <div><h3>Wordmark</h3><p>Primary monochrome T0N1N0 logo for lineups, posters and digital announcements.</p><span class="arrow-link">Download</span></div>
+            </a>
+            <a class="asset reveal" href="assets/t0n1n0-mark.svg" download>
+              <div class="asset-icon">0/1</div>
+              <div><h3>Binary Mark</h3><p>Compact 0/1 symbol for avatars, badges, stickers and secondary applications.</p><span class="arrow-link">Download</span></div>
+            </a>
+            <button class="asset reveal" type="button" id="printEpk" style="color:inherit;background:none;text-align:left;border-top:0;border-bottom:0;border-left:0;cursor:pointer" aria-label="Open the print dialog to save the EPK as PDF">
+              <div class="asset-icon">PDF</div>
+              <div><h3>Save EPK</h3><p>Opens the print-ready version. Choose “Save as PDF” in the system print dialog.</p><span class="arrow-link">Open print view</span></div>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="booking" class="contact">
+        <div class="reveal">
+          <div class="contact-label">Bookings / collaborations / press</div>
+          <h2>Enter the <span>signal.</span></h2>
+          <a class="contact-mail" href="mailto:t0n1n0.booking@gmail.com?subject=T0N1N0%20Booking%20Enquiry">t0n1n0.booking@gmail.com</a>
+          <div class="contact-links">
+            <a href="https://www.instagram.com/_t0n1n0_/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://soundcloud.com/the-game-company" target="_blank" rel="noopener">SoundCloud</a>
+            <a href="https://www.beatport.com/artist/t0n1n0/2279123" target="_blank" rel="noopener">Beatport</a>
+            <a href="https://www.youtube.com/watch?v=PgxxheDzCQ4" target="_blank" rel="noopener">YouTube</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> T0N1N0</div>
+      <div class="center">Electronic Press Kit / v1.0</div>
+      <div class="right">0 → 1 / no middle state</div>
+    </footer>
+  </div>
+
+  <script>
+    // Mobile menu
+    const toggle = document.getElementById('mobileToggle');
+    const menu = document.getElementById('menu');
+    const closeMenu = () => {
+      menu.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = 'Menu';
+    };
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.textContent = open ? 'Close' : 'Menu';
+    });
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && menu.classList.contains('open')) {
+        closeMenu();
+        toggle.focus();
+      }
+    });
+    document.addEventListener('click', event => {
+      if (menu.classList.contains('open') && !menu.contains(event.target) && !toggle.contains(event.target)) closeMenu();
+    });
+
+    // Scroll reveal
+    const revealElements = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: .12 });
+      revealElements.forEach(el => observer.observe(el));
+    } else {
+      revealElements.forEach(el => el.classList.add('in'));
+    }
+
+    // Waveform generation
+    document.querySelectorAll('.wave').forEach((wave, w) => {
+      for (let i = 0; i < 46; i++) {
+        const bar = document.createElement('i');
+        const h = 8 + Math.abs(Math.sin((i + w * 7) * .61)) * 50 + Math.abs(Math.cos(i * .23)) * 10;
+        bar.style.setProperty('--h', h.toFixed(0));
+        bar.style.setProperty('--i', i);
+        wave.appendChild(bar);
+      }
+    });
+
+    // Print / Save as PDF
+    document.getElementById('printEpk').addEventListener('click', () => window.print());
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Subtle binary field
+    const canvas = document.getElementById('binaryCanvas');
+    const ctx = canvas.getContext('2d');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let W, H, columns, drops, animationFrame;
+    const fontSize = 15;
+    function resize() {
+      if (!ctx) return;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      W = window.innerWidth; H = window.innerHeight;
+      canvas.width = W * dpr; canvas.height = H * dpr;
+      canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      columns = Math.ceil(W / fontSize);
+      drops = Array.from({length: columns}, () => Math.random() * -80);
+    }
+    function drawBinary() {
+      if (!ctx) return;
+      ctx.fillStyle = 'rgba(5,5,5,.08)';
+      ctx.fillRect(0, 0, W, H);
+      ctx.fillStyle = 'rgba(246,246,242,.5)';
+      ctx.font = `${fontSize}px Courier New`;
+      for (let i = 0; i < drops.length; i++) {
+        const char = Math.random() > .5 ? '1' : '0';
+        ctx.fillText(char, i * fontSize, drops[i] * fontSize);
+        if (drops[i] * fontSize > H && Math.random() > .985) drops[i] = 0;
+        drops[i] += .14 + Math.random() * .18;
+      }
+      if (!reducedMotion) animationFrame = requestAnimationFrame(drawBinary);
+    }
+    if (ctx) {
+      resize();
+      drawBinary();
+      let resizeTimer;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(resize, 120);
+      }, { passive: true });
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden && animationFrame) cancelAnimationFrame(animationFrame);
+        if (!document.hidden && !reducedMotion) drawBinary();
+      });
+    }
+  </script>
+</body>
+</html>
