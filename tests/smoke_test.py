@@ -67,6 +67,11 @@ def main():
     if "https://www.instagram.com/_.Vallerianiii._/" not in parser.links:
         fail("Updated Instagram profile is missing",errors)
     if "Des1gner Visual" in html_text: fail("Removed Des1gner Visual block is still present",errors)
+    if "Rashomon / Zalib" in html_text: fail("Removed Rashomon / Zalib credit is still present",errors)
+    if "https://youtu.be/31NhgfSfY-w" not in parser.links:
+        fail("ModaLisboa 2025 video link is missing",errors)
+    if '<span class="credit-year">2025</span><span class="credit-name"><a' not in html_text:
+        fail("ModaLisboa 2025 credit is missing or has the wrong year",errors)
     if "observer-mask" in html_text or "observer-eyes" in html_text:
         fail("Removed face/observer visual is still present",errors)
     for required_id in ["heroPortal", "signalSequence", "signalSequenceTitle", "scrollPortal"]:
