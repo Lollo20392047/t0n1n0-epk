@@ -40,7 +40,8 @@ def fail(msg, errors): errors.append(msg)
 def main():
     errors=[]
     if not HTML.exists(): fail("index.html is missing",errors)
-    parser=AuditParser(); parser.feed(HTML.read_text(encoding="utf-8"))
+    html_text=HTML.read_text(encoding="utf-8")
+    parser=AuditParser(); parser.feed(html_text)
     duplicates={x for x in parser.ids if parser.ids.count(x)>1}
     if duplicates: fail(f"Duplicate IDs: {sorted(duplicates)}",errors)
     ids=set(parser.ids)
@@ -62,10 +63,14 @@ def main():
         if not parser.meta.get(image_meta, "").startswith("https://"):
             fail(f"{image_meta} must use an absolute HTTPS URL", errors)
     if not parser.title: fail("Missing title element",errors)
+    if "MAT Academy" not in html_text: fail("MAT Academy education credit is missing",errors)
+    if "https://www.instagram.com/_.Vallerianiii._/" not in parser.links:
+        fail("Updated Instagram profile is missing",errors)
+    if "Des1gner Visual" in html_text: fail("Removed Des1gner Visual block is still present",errors)
     cfg=ROOT/"vercel.json"
     try: json.loads(cfg.read_text())
     except Exception as exc: fail(f"Invalid vercel.json: {exc}",errors)
-    for required in [ROOT/"404.html", ROOT/"robots.txt", ROOT/"sitemap.xml", ROOT/"assets/favicon.svg", ROOT/"assets/t0n1n0-og.png"]:
+    for required in [ROOT/"404.html", ROOT/"robots.txt", ROOT/"sitemap.xml", ROOT/"assets/favicon.svg", ROOT/"assets/t0n1n0-og.png", ROOT/"assets/t0n1n0-stacked-mark.svg"]:
         if not required.exists(): fail(f"Required deploy file missing: {required.relative_to(ROOT)}",errors)
     if errors:
         print("PRE-DEPLOY CHECKS FAILED")
