@@ -2,6 +2,10 @@
 
 Static, dependency-free EPK for T0N1N0.
 
+The visual system is built around binary contrast: a black/white display
+wordmark, a cursor-reactive 0/1 observer, falling binary type, and a stacked
+T0 / N1 / N0 mark. Motion automatically reduces when requested by the device.
+
 Production: <https://t0n1n0-epk.vercel.app/>
 
 ## Local preview

@@ -2,5 +2,6 @@
   <title id="title">T0N1N0 wordmark</title>
   <desc id="desc">Black and white T0N1N0 artist wordmark</desc>
   <rect width="1200" height="300" fill="#050505"/>
-  <text x="600" y="210" fill="#f6f6f2" font-family="Arial, Helvetica, sans-serif" font-size="190" font-weight="700" letter-spacing="-16" text-anchor="middle">T0N1N0</text>
+  <text x="600" y="218" fill="#f6f6f2" font-family="Impact, Arial Black, sans-serif" font-size="210" font-weight="900" letter-spacing="-8" text-anchor="middle" textLength="1010" lengthAdjust="spacingAndGlyphs">T0N1N0</text>
+  <path d="M94 151H1106" stroke="#f6f6f2" stroke-width="10"/>
 </svg>

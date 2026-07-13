@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 720" role="img" aria-labelledby="title desc">
+  <title id="title">T0N1N0 stacked mark</title>
+  <desc id="desc">Vertical monochrome T0, N1, N0 artist mark crossed by three horizontal bars</desc>
+  <rect width="420" height="720" fill="#050505"/>
+  <g fill="#f6f6f2" font-family="Impact, Arial Black, sans-serif" font-size="210" font-weight="900" text-anchor="middle">
+    <text x="210" y="215" textLength="230" lengthAdjust="spacingAndGlyphs">T0</text>
+    <text x="210" y="415" textLength="230" lengthAdjust="spacingAndGlyphs">N1</text>
+    <text x="210" y="615" textLength="230" lengthAdjust="spacingAndGlyphs">N0</text>
+  </g>
+  <g stroke="#f6f6f2" stroke-width="10">
+    <path d="M92 154H330"/>
+    <path d="M88 355L332 349"/>
+    <path d="M94 548L326 558"/>
+  </g>
+  <g fill="#f6f6f2" font-family="monospace" font-size="11" letter-spacing="3">
+    <text x="28" y="687">ZERO / ONE</text>
+    <text x="392" y="33" text-anchor="end">001</text>
+  </g>
+</svg>
