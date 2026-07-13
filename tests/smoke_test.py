@@ -67,6 +67,12 @@ def main():
     if "https://www.instagram.com/_.Vallerianiii._/" not in parser.links:
         fail("Updated Instagram profile is missing",errors)
     if "Des1gner Visual" in html_text: fail("Removed Des1gner Visual block is still present",errors)
+    if "observer-mask" in html_text or "observer-eyes" in html_text:
+        fail("Removed face/observer visual is still present",errors)
+    for required_id in ["heroPortal", "signalSequence", "signalSequenceTitle", "scrollPortal"]:
+        if required_id not in ids: fail(f"Scroll-driven portal ID is missing: {required_id}",errors)
+    if "updateSignalSequence" not in html_text or "--progress" not in html_text:
+        fail("Scroll-driven sequence logic is missing",errors)
     cfg=ROOT/"vercel.json"
     try: json.loads(cfg.read_text())
     except Exception as exc: fail(f"Invalid vercel.json: {exc}",errors)
