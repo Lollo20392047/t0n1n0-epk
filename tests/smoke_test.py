@@ -78,6 +78,8 @@ def main():
         if required_id not in ids: fail(f"Scroll-driven portal ID is missing: {required_id}",errors)
     if "updateSignalSequence" not in html_text or "--progress" not in html_text:
         fail("Scroll-driven sequence logic is missing",errors)
+    if 'translate="no"><span class="contact-title-line">Enter the</span><span class="contact-title-line contact-title-outline">signal.</span>' not in html_text:
+        fail("Android-safe contact title structure is missing",errors)
     cfg=ROOT/"vercel.json"
     try: json.loads(cfg.read_text())
     except Exception as exc: fail(f"Invalid vercel.json: {exc}",errors)
