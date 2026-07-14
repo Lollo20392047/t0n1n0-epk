@@ -97,7 +97,9 @@ def main():
     cfg=ROOT/"vercel.json"
     try: json.loads(cfg.read_text())
     except Exception as exc: fail(f"Invalid vercel.json: {exc}",errors)
-    for required in [ROOT/"404.html", ROOT/"robots.txt", ROOT/"sitemap.xml", ROOT/"assets/favicon.svg", ROOT/"assets/t0n1n0-og.png", ROOT/"assets/t0n1n0-stacked-mark.svg"]:
+    if parser.resources.count("/favicon.svg") != 1:
+        fail("The homepage must advertise the root 01 favicon exactly once",errors)
+    for required in [ROOT/"404.html", ROOT/"robots.txt", ROOT/"sitemap.xml", ROOT/"favicon.svg", ROOT/"assets/favicon.svg", ROOT/"assets/t0n1n0-og.png", ROOT/"assets/t0n1n0-stacked-mark.svg"]:
         if not required.exists(): fail(f"Required deploy file missing: {required.relative_to(ROOT)}",errors)
     if errors:
         print("PRE-DEPLOY CHECKS FAILED")
