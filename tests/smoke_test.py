@@ -54,11 +54,13 @@ def main():
     for attrs in parser.target_blank:
         rel=set((attrs.get("rel") or "").split())
         if "noopener" not in rel: fail(f"target=_blank missing noopener: {attrs.get('href')}",errors)
-    required_meta=["description","viewport","og:title","og:description","og:url","og:image","twitter:card","twitter:image"]
+    required_meta=["description","author","viewport","og:title","og:description","og:site_name","og:url","og:image","twitter:card","twitter:image"]
     for item in required_meta:
         if item not in parser.meta: fail(f"Missing metadata: {item}",errors)
     if parser.canonical != parser.meta.get("og:url"):
         fail("Canonical URL and og:url must match", errors)
+    if parser.canonical != "https://t0n1n0.com/":
+        fail("Canonical URL must point to the official t0n1n0.com domain", errors)
     for image_meta in ["og:image", "twitter:image"]:
         if not parser.meta.get(image_meta, "").startswith("https://"):
             fail(f"{image_meta} must use an absolute HTTPS URL", errors)
@@ -82,6 +84,16 @@ def main():
         fail("Android-safe contact title structure is missing",errors)
     if "-webkit-text-stroke: 0;" not in html_text or "text-shadow:" not in html_text:
         fail("Android-safe shadow outline fallback is missing",errors)
+    if '"@type": "Person"' not in html_text or '"url": "https://t0n1n0.com/"' not in html_text:
+        fail("T0N1N0 structured artist data is missing",errors)
+    robots_text=(ROOT/"robots.txt").read_text(encoding="utf-8")
+    sitemap_text=(ROOT/"sitemap.xml").read_text(encoding="utf-8")
+    if "https://t0n1n0.com/sitemap.xml" not in robots_text:
+        fail("robots.txt does not advertise the official-domain sitemap",errors)
+    if "<loc>https://t0n1n0.com/</loc>" not in sitemap_text:
+        fail("sitemap.xml does not contain the official homepage",errors)
+    if "t0n1n0-epk.vercel.app" in html_text + robots_text + sitemap_text:
+        fail("Legacy Vercel URLs remain in indexable SEO files",errors)
     cfg=ROOT/"vercel.json"
     try: json.loads(cfg.read_text())
     except Exception as exc: fail(f"Invalid vercel.json: {exc}",errors)
