@@ -80,6 +80,8 @@ def main():
         fail("Scroll-driven sequence logic is missing",errors)
     if 'translate="no"><span class="contact-title-line">Enter the</span><span class="contact-title-line contact-title-outline">signal.</span>' not in html_text:
         fail("Android-safe contact title structure is missing",errors)
+    if "-webkit-text-stroke: 0;" not in html_text or "text-shadow:" not in html_text:
+        fail("Android-safe shadow outline fallback is missing",errors)
     cfg=ROOT/"vercel.json"
     try: json.loads(cfg.read_text())
     except Exception as exc: fail(f"Invalid vercel.json: {exc}",errors)
