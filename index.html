@@ -289,7 +289,7 @@
     .asset h3 { margin: 0 0 8px; font: 900 34px/.85 var(--display); text-transform: uppercase; letter-spacing: -.02em; }
     .asset p { color: var(--muted); margin: 0; font-size: 13px; line-height: 1.5; }
 
-    .contact { min-height: 86vh; display: grid; place-items: center; text-align: center; padding: 100px var(--pad); overflow: hidden; }
+    .contact { min-height: 86vh; display: grid; place-items: center; text-align: center; padding: 100px var(--pad); overflow: hidden; background: var(--black); }
     .contact::before { content: "010101 001 0101 10 0010101 01010"; position: absolute; top: 10%; left: -5%; font: 700 clamp(45px, 8vw, 130px)/.8 var(--mono); color: rgba(255,255,255,.028); white-space: nowrap; transform: rotate(-5deg); }
     .contact-label { color: var(--muted); font: 11px/1 var(--mono); text-transform: uppercase; letter-spacing: .2em; margin-bottom: 32px; }
     .contact h2 { margin: 0; display: grid; gap: .025em; font: 900 clamp(68px, 12vw, 205px)/.74 var(--display); letter-spacing: -.045em; text-transform: uppercase; transform: scaleX(.88); transform-origin: center; }
@@ -366,7 +366,14 @@
       .release { min-height: 440px; }
       .contact { padding-inline: max(16px, var(--pad)); }
       .contact h2 { gap: .08em; font-size: clamp(54px, 16.5vw, 92px); line-height: .82; }
-      .contact-title-outline { -webkit-text-stroke-width: 1px; }
+      .contact-title-outline {
+        color: var(--black);
+        -webkit-text-stroke: 0;
+        text-shadow:
+          -1px -1px 0 var(--white), 0 -1px 0 var(--white), 1px -1px 0 var(--white),
+          -1px  0   0 var(--white),                       1px  0   0 var(--white),
+          -1px  1px 0 var(--white), 0  1px 0 var(--white), 1px  1px 0 var(--white);
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
