@@ -54,7 +54,7 @@ def main():
     for attrs in parser.target_blank:
         rel=set((attrs.get("rel") or "").split())
         if "noopener" not in rel: fail(f"target=_blank missing noopener: {attrs.get('href')}",errors)
-    required_meta=["description","author","viewport","og:title","og:description","og:site_name","og:url","og:image","twitter:card","twitter:image"]
+    required_meta=["description","author","google-site-verification","viewport","og:title","og:description","og:site_name","og:url","og:image","twitter:card","twitter:image"]
     for item in required_meta:
         if item not in parser.meta: fail(f"Missing metadata: {item}",errors)
     if parser.canonical != parser.meta.get("og:url"):
