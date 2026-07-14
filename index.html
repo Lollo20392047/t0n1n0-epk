@@ -292,8 +292,9 @@
     .contact { min-height: 86vh; display: grid; place-items: center; text-align: center; padding: 100px var(--pad); overflow: hidden; }
     .contact::before { content: "010101 001 0101 10 0010101 01010"; position: absolute; top: 10%; left: -5%; font: 700 clamp(45px, 8vw, 130px)/.8 var(--mono); color: rgba(255,255,255,.028); white-space: nowrap; transform: rotate(-5deg); }
     .contact-label { color: var(--muted); font: 11px/1 var(--mono); text-transform: uppercase; letter-spacing: .2em; margin-bottom: 32px; }
-    .contact h2 { margin: 0; font: 900 clamp(68px, 12vw, 205px)/.68 var(--display); letter-spacing: -.045em; text-transform: uppercase; transform: scaleX(.88); }
-    .contact h2 span { color: transparent; -webkit-text-stroke: 2px var(--white); font-weight: 900; }
+    .contact h2 { margin: 0; display: grid; gap: .025em; font: 900 clamp(68px, 12vw, 205px)/.74 var(--display); letter-spacing: -.045em; text-transform: uppercase; transform: scaleX(.88); transform-origin: center; }
+    .contact-title-line { display: block; white-space: nowrap; }
+    .contact-title-outline { color: transparent; -webkit-text-stroke: clamp(1px, .12vw, 2px) var(--white); font-weight: 900; }
     .contact-mail { display: inline-block; margin-top: 56px; padding: 18px 24px; border: 1px solid var(--line-strong); font: 12px/1 var(--mono); letter-spacing: .08em; transition: .25s; }
     .contact-mail:hover { background: var(--white); color: var(--black); }
     .contact-links { margin-top: 34px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 24px; color: var(--muted); font: 10px/1 var(--mono); text-transform: uppercase; letter-spacing: .13em; }
@@ -363,6 +364,9 @@
       footer { grid-template-columns: 1fr; text-align: left; }
       footer .center, footer .right { text-align: left; }
       .release { min-height: 440px; }
+      .contact { padding-inline: max(16px, var(--pad)); }
+      .contact h2 { gap: .08em; font-size: clamp(54px, 16.5vw, 92px); line-height: .82; }
+      .contact-title-outline { -webkit-text-stroke-width: 1px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -594,7 +598,7 @@
       <section id="booking" class="contact">
         <div class="reveal">
           <div class="contact-label">Bookings / collaborations / press</div>
-          <h2>Enter the <span>signal.</span></h2>
+          <h2 translate="no"><span class="contact-title-line">Enter the</span><span class="contact-title-line contact-title-outline">signal.</span></h2>
           <a class="contact-mail" href="mailto:t0n1n0.booking@gmail.com?subject=T0N1N0%20Booking%20Enquiry">t0n1n0.booking@gmail.com</a>
           <div class="contact-links">
             <a href="https://www.instagram.com/_.Vallerianiii._/" target="_blank" rel="noopener">@_.Vallerianiii._</a>
