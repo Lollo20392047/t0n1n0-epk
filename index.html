@@ -294,7 +294,15 @@
     .contact-label { color: var(--muted); font: 11px/1 var(--mono); text-transform: uppercase; letter-spacing: .2em; margin-bottom: 32px; }
     .contact h2 { margin: 0; display: grid; gap: .025em; font: 900 clamp(68px, 12vw, 205px)/.74 var(--display); letter-spacing: -.045em; text-transform: uppercase; transform: scaleX(.88); transform-origin: center; }
     .contact-title-line { display: block; white-space: nowrap; }
-    .contact-title-outline { color: transparent; -webkit-text-stroke: clamp(1px, .12vw, 2px) var(--white); font-weight: 900; }
+    .contact-title-outline {
+      color: var(--black);
+      -webkit-text-stroke: 0;
+      font-weight: 900;
+      text-shadow:
+        -1px -1px 0 var(--white), 0 -1px 0 var(--white), 1px -1px 0 var(--white),
+        -1px  0   0 var(--white),                       1px  0   0 var(--white),
+        -1px  1px 0 var(--white), 0  1px 0 var(--white), 1px  1px 0 var(--white);
+    }
     .contact-mail { display: inline-block; margin-top: 56px; padding: 18px 24px; border: 1px solid var(--line-strong); font: 12px/1 var(--mono); letter-spacing: .08em; transition: .25s; }
     .contact-mail:hover { background: var(--white); color: var(--black); }
     .contact-links { margin-top: 34px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 24px; color: var(--muted); font: 10px/1 var(--mono); text-transform: uppercase; letter-spacing: .13em; }
@@ -366,14 +374,6 @@
       .release { min-height: 440px; }
       .contact { padding-inline: max(16px, var(--pad)); }
       .contact h2 { gap: .08em; font-size: clamp(54px, 16.5vw, 92px); line-height: .82; }
-      .contact-title-outline {
-        color: var(--black);
-        -webkit-text-stroke: 0;
-        text-shadow:
-          -1px -1px 0 var(--white), 0 -1px 0 var(--white), 1px -1px 0 var(--white),
-          -1px  0   0 var(--white),                       1px  0   0 var(--white),
-          -1px  1px 0 var(--white), 0  1px 0 var(--white), 1px  1px 0 var(--white);
-      }
     }
 
     @media (prefers-reduced-motion: reduce) {
