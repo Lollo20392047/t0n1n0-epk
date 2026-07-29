@@ -5,6 +5,7 @@ from pathlib import Path
 from urllib.parse import urlparse, unquote
 import json
 import sys
+import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 HTML = ROOT / "index.html"
@@ -99,8 +100,36 @@ def main():
     except Exception as exc: fail(f"Invalid vercel.json: {exc}",errors)
     if parser.resources.count("/favicon.svg") != 1:
         fail("The homepage must advertise the root 01 favicon exactly once",errors)
-    for required in [ROOT/"404.html", ROOT/"robots.txt", ROOT/"sitemap.xml", ROOT/"favicon.svg", ROOT/"assets/favicon.svg", ROOT/"assets/t0n1n0-og.png", ROOT/"assets/t0n1n0-stacked-mark.svg"]:
+    for required in [
+        ROOT/"404.html",
+        ROOT/"robots.txt",
+        ROOT/"sitemap.xml",
+        ROOT/"favicon.svg",
+        ROOT/"assets/favicon.svg",
+        ROOT/"assets/t0n1n0-og.png",
+        ROOT/"assets/t0n1n0-wordmark.svg",
+        ROOT/"assets/t0n1n0-stacked-mark.svg",
+        ROOT/"assets/t0n1n0-mark.svg",
+        ROOT/"assets/t0n1n0-press-pack.zip",
+    ]:
         if not required.exists(): fail(f"Required deploy file missing: {required.relative_to(ROOT)}",errors)
+    pack=ROOT/"assets/t0n1n0-press-pack.zip"
+    if pack.exists():
+        try:
+            with zipfile.ZipFile(pack) as archive:
+                names=set(archive.namelist())
+                expected={
+                    "T0N1N0_Wordmark_Dark.svg",
+                    "T0N1N0_Wordmark_Light.svg",
+                    "T0N1N0_Stacked_Dark.svg",
+                    "T0N1N0_Stacked_Light.svg",
+                    "T0N1N0_01_Symbol_Dark.svg",
+                    "T0N1N0_01_Symbol_Light.svg",
+                }
+                if not expected.issubset(names):
+                    fail("Press-pack archive is missing one or more logo variants",errors)
+        except zipfile.BadZipFile:
+            fail("Press-pack archive is invalid",errors)
     if errors:
         print("PRE-DEPLOY CHECKS FAILED")
         for e in errors: print(f"- {e}")

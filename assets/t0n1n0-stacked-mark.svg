@@ -1,19 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 720" role="img" aria-labelledby="title desc">
-  <title id="title">T0N1N0 stacked mark</title>
-  <desc id="desc">Vertical monochrome T0, N1, N0 artist mark crossed by three horizontal bars</desc>
-  <rect width="420" height="720" fill="#050505"/>
-  <g fill="#f6f6f2" font-family="Impact, Arial Black, sans-serif" font-size="210" font-weight="900" text-anchor="middle">
-    <text x="210" y="215" textLength="230" lengthAdjust="spacingAndGlyphs">T0</text>
-    <text x="210" y="415" textLength="230" lengthAdjust="spacingAndGlyphs">N1</text>
-    <text x="210" y="615" textLength="230" lengthAdjust="spacingAndGlyphs">N0</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1080" role="img" aria-labelledby="title desc">
+  <title id="title">T0N1N0 stacked geometric mark — dark</title>
+  <desc id="desc">White stacked T0, N1, N0 geometric artist mark on black.</desc>
+  <rect width="720" height="1080" fill="#050505"/>
+  <g fill="none" stroke="#F5F5F0">
+    <rect x="34" y="34" width="652" height="1012" stroke-width="2" opacity=".78"/>
+    <path d="M34 102H86M34 102V50M686 978H634M686 978V1030" stroke-width="9"/>
   </g>
-  <g stroke="#f6f6f2" stroke-width="10">
-    <path d="M92 154H330"/>
-    <path d="M88 355L332 349"/>
-    <path d="M94 548L326 558"/>
+
+  <!-- T0 -->
+  <g transform="translate(126 122)">
+    <path fill="#F5F5F0" d="M0 0H214V43H128V242H86V43H0Z"/>
+    <path fill="#F5F5F0" fill-rule="evenodd" d="M253 0H425L447 22V220L425 242H253L231 220V22L253 0ZM287 43L275 55V187L287 199H391L403 187V55L391 43H287Z"/>
   </g>
-  <g fill="#f6f6f2" font-family="monospace" font-size="11" letter-spacing="3">
-    <text x="28" y="687">ZERO / ONE</text>
-    <text x="392" y="33" text-anchor="end">001</text>
+
+  <!-- N1 -->
+  <g transform="translate(126 419)">
+    <path fill="#F5F5F0" d="M0 0H44L170 169V0H214V242H170L44 73V242H0Z"/>
+    <path fill="#F5F5F0" d="M318 0H360V199H425V242H253V199H318V59L264 88V38Z"/>
+  </g>
+
+  <!-- N0 -->
+  <g transform="translate(126 716)">
+    <path fill="#F5F5F0" d="M0 0H44L170 169V0H214V242H170L44 73V242H0Z"/>
+    <path fill="#F5F5F0" fill-rule="evenodd" d="M253 0H425L447 22V220L425 242H253L231 220V22L253 0ZM287 43L275 55V187L287 199H391L403 187V55L391 43H287Z"/>
+  </g>
+
+  <!-- Aligned signal cuts -->
+  <g fill="#050505">
+    <rect x="92" y="237" width="536" height="13"/>
+    <rect x="92" y="534" width="536" height="13"/>
+    <rect x="92" y="831" width="536" height="13"/>
+  </g>
+  <g stroke="#F5F5F0" stroke-width="4">
+    <path d="M54 243.5H92M628 243.5H666"/>
+    <path d="M54 540.5H92M628 540.5H666"/>
+    <path d="M54 837.5H92M628 837.5H666"/>
+  </g>
+
+  <g fill="#F5F5F0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" font-weight="700" letter-spacing="3">
+    <text x="61" y="1014">ZERO / ONE</text>
+    <text x="659" y="1014" text-anchor="end">ROME · 001</text>
+    <text x="61" y="78">STATE</text>
+    <text x="659" y="78" text-anchor="end">0 → 1</text>
   </g>
 </svg>

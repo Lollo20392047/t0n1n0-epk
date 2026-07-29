@@ -1,7 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
-  <title id="title">T0N1N0 wordmark</title>
-  <desc id="desc">Black and white T0N1N0 artist wordmark</desc>
-  <rect width="1200" height="300" fill="#050505"/>
-  <text x="600" y="218" fill="#f6f6f2" font-family="Impact, Arial Black, sans-serif" font-size="210" font-weight="900" letter-spacing="-8" text-anchor="middle" textLength="1010" lengthAdjust="spacingAndGlyphs">T0N1N0</text>
-  <path d="M94 151H1106" stroke="#f6f6f2" stroke-width="10"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 500" role="img" aria-labelledby="title desc">
+  <title id="title">T0N1N0 geometric wordmark — dark</title>
+  <desc id="desc">White geometric T0N1N0 wordmark on black with a binary signal cut.</desc>
+  <rect width="1600" height="500" fill="#050505"/>
+  <g fill="none" stroke="#F5F5F0">
+    <rect x="32" y="32" width="1536" height="436" stroke-width="2" opacity=".78"/>
+    <path d="M32 82H76M32 82V38M1568 418H1524M1568 418V462" stroke-width="8"/>
+  </g>
+
+  <!-- T -->
+  <path fill="#F5F5F0" d="M90 126H306V171H220V369H176V171H90Z"/>
+
+  <!-- 0 -->
+  <path fill="#F5F5F0" fill-rule="evenodd" d="M334 126H526L548 148V347L526 369H334L312 347V148L334 126ZM368 170L356 182V313L368 325H492L504 313V182L492 170H368Z"/>
+
+  <!-- N -->
+  <path fill="#F5F5F0" d="M574 126H620L728 303V126H774V369H728L620 192V369H574Z"/>
+
+  <!-- 1 -->
+  <path fill="#F5F5F0" d="M853 126H899V324H958V369H795V324H853V185L802 214V162Z"/>
+
+  <!-- N -->
+  <path fill="#F5F5F0" d="M984 126H1030L1138 303V126H1184V369H1138L1030 192V369H984Z"/>
+
+  <!-- 0 -->
+  <path fill="#F5F5F0" fill-rule="evenodd" d="M1230 126H1422L1444 148V347L1422 369H1230L1208 347V148L1230 126ZM1264 170L1252 182V313L1264 325H1388L1400 313V182L1388 170H1264Z"/>
+
+  <!-- One continuous, intentional signal cut -->
+  <rect x="76" y="242" width="1384" height="13" fill="#050505"/>
+  <path d="M52 248.5H76M1460 248.5H1548" stroke="#F5F5F0" stroke-width="4"/>
+
+  <!-- Binary rail -->
+  <g fill="#F5F5F0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15" font-weight="700" letter-spacing="4">
+    <text x="76" y="426">ZERO / ONE SYSTEM</text>
+    <text x="800" y="426" text-anchor="middle">010101 · 001 · 1010</text>
+    <text x="1524" y="426" text-anchor="end">ROME / IT · 001</text>
+  </g>
+  <g fill="#F5F5F0">
+    <rect x="76" y="65" width="11" height="11"/>
+    <rect x="94" y="65" width="38" height="11" opacity=".28"/>
+    <rect x="1468" y="65" width="11" height="11"/>
+    <rect x="1486" y="65" width="38" height="11" opacity=".28"/>
+  </g>
 </svg>
