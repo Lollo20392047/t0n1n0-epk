@@ -1,7 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
-  <title id="title">T0N1N0 binary mark</title>
-  <desc id="desc">Monochrome zero slash one artist symbol</desc>
-  <rect width="512" height="512" fill="#050505"/>
-  <circle cx="256" cy="256" r="190" fill="none" stroke="#f6f6f2" stroke-width="5"/>
-  <text x="256" y="302" fill="#f6f6f2" font-family="Courier New, monospace" font-size="150" font-weight="700" text-anchor="middle">0/1</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-labelledby="title desc">
+  <title id="title">T0N1N0 zero one symbol — dark</title>
+  <desc id="desc">White geometric zero and one monogram inside a binary signal frame on black.</desc>
+  <rect width="800" height="800" fill="#050505"/>
+  <circle cx="400" cy="400" r="334" fill="none" stroke="#F5F5F0" stroke-width="3" opacity=".72"/>
+  <circle cx="400" cy="400" r="302" fill="none" stroke="#F5F5F0" stroke-width="1" opacity=".25"/>
+
+  <!-- 0 -->
+  <path fill="#F5F5F0" fill-rule="evenodd" d="M190 189H409L443 223V577L409 611H190L156 577V223L190 189ZM239 247L220 266V534L239 553H360L379 534V266L360 247H239Z"/>
+
+  <!-- 1 -->
+  <path fill="#F5F5F0" d="M518 189H579V550H658V611H433V550H518V274L451 314V244Z"/>
+
+  <!-- Shared signal cut -->
+  <rect x="128" y="392" width="544" height="17" fill="#050505"/>
+  <path d="M78 400.5H128M672 400.5H722" stroke="#F5F5F0" stroke-width="5"/>
+
+  <!-- Four binary ticks -->
+  <g fill="#F5F5F0">
+    <rect x="394" y="49" width="12" height="36"/>
+    <rect x="394" y="715" width="12" height="36"/>
+    <rect x="49" y="394" width="36" height="12"/>
+    <rect x="715" y="394" width="36" height="12"/>
+  </g>
+  <g fill="#F5F5F0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" font-weight="700" letter-spacing="3">
+    <text x="126" y="688">T0N1N0</text>
+    <text x="674" y="688" text-anchor="end">STATE 01</text>
+    <text x="126" y="124">ZERO / ONE</text>
+    <text x="674" y="124" text-anchor="end">001</text>
+  </g>
 </svg>
