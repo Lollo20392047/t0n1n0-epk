@@ -73,6 +73,15 @@ def main():
     if "Rashomon / Zalib" in html_text: fail("Removed Rashomon / Zalib credit is still present",errors)
     if "https://youtu.be/31NhgfSfY-w" not in parser.links:
         fail("ModaLisboa 2025 video link is missing",errors)
+    mixcloud_set="https://www.mixcloud.com/T0N1N0/t0n1n0-2026-club-set-technotech-househouse/"
+    if mixcloud_set not in parser.links:
+        fail("The 2026 Club Set Mixcloud link is missing",errors)
+    if "T0N1N0 — 2026 Club Set" not in html_text:
+        fail("The 2026 Club Set title is missing",errors)
+    if "Techno / Tech House / House" not in html_text or "3:00:42 mix" not in html_text:
+        fail("The 2026 Club Set details are missing",errors)
+    if "https://soundcloud.com/the-game-company/t0n1n0-tech-house-bass-house" in parser.links:
+        fail("The superseded 2026 SoundCloud set is still linked",errors)
     if '<span class="credit-year">2025</span><span class="credit-name"><a' not in html_text:
         fail("ModaLisboa 2025 credit is missing or has the wrong year",errors)
     if "observer-mask" in html_text or "observer-eyes" in html_text:
